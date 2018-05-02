@@ -101,7 +101,6 @@ abstract class Admiral::Command
   end
 
   macro define_help(custom, description = "", flag = help, short = nil)
-    {{ raise "Description too long, limit: 80 chars." if description.stringify.size > 80 }}
     HELP["description"] = {{ description }}
     {% if flag %}
       define_flag __help__ : Bool,
