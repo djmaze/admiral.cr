@@ -7,7 +7,7 @@ describe "commands" do
       File.tempfile("test") do |io|
         RequiredArgumentCommand.run([] of String, error: io)
         io.rewind
-        io.gets_to_end.should eq "Missing required attribute: <aa>".colorize(:red).to_s + "\n"
+        io.gets_to_end.should eq "Argument required: aa".colorize(:red).to_s + "\n"
       end
     end
 
